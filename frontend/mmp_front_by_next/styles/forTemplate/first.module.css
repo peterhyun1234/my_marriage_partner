@@ -5,17 +5,24 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    background-image: url(https://media.giphy.com/media/2VUIE0b9l1Sdq/giphy.gif); 
 }
 
 .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bigBox{
     padding: 5rem 0;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url(https://media.giphy.com/media/cmegx6SssTKmEFEcwj/giphy.gif);
+    background-color: aquamarine;
 }
 
 .footer {
