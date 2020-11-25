@@ -1,7 +1,6 @@
 
 .container {
     min-height: 100vh;
-    padding: 0 0.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,13 +15,26 @@
 }
 
 .bigBox{
-    padding: 5rem 0;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: aquamarine;
+    background-color: #fffeed;
+}
+
+.smallBox{
+    margin: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fffeed;
+}
+
+.sampleLine{
+    border: solid 1px #ffd6ff;
 }
 
 .footer {
