@@ -14,7 +14,7 @@ export default function FirstTemplate() {
             11.28
           </p>
           <p>
-            전현빈 그리고 홍길동
+            전현빈 그리고 송성규
           </p>
           <p>
             (메인 사진)
