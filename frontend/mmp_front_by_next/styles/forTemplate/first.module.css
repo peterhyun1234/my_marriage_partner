@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
 
 .container {
+    font-family: 'Nanum Myeongjo', serif;
+    color: #cc43cc;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -12,6 +15,16 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.title{
+    font-size: x-small;
+}
+
+.destDate{
+    font-size: xx-large;
+    margin: 0%;
+
 }
 
 .bigBox{

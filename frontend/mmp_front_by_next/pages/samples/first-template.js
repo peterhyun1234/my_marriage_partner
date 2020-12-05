@@ -7,18 +7,20 @@ export default function FirstTemplate() {
 
       <main className={styles.main}>
         <div className={styles.bigBox}>
-          <h1 className={styles.title}>
-            wedding invitation
-          </h1>
-          <p>
+          <p className={styles.title}>
+            W&nbsp;&nbsp;E&nbsp;&nbsp;D&nbsp;&nbsp;D&nbsp;&nbsp;I&nbsp;&nbsp;N&nbsp;&nbsp;G 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            I&nbsp;&nbsp;N&nbsp;&nbsp;V&nbsp;&nbsp;I&nbsp;&nbsp;T&nbsp;&nbsp;A&nbsp;&nbsp;T&nbsp;&nbsp;I&nbsp;&nbsp;O&nbsp;&nbsp;N
+          </p>
+          <p className={styles.destDate}>
             11.28
           </p>
           <p>
-            전현빈 그리고 송성규
+            홍길동 그리고 김미정
           </p>
-          <p>
-            (메인 사진)
-          </p>
+          <div>
+            사진
+          </div>
           <p>
             2020년 11월 28일(토) 오후 3:30
           </p>
