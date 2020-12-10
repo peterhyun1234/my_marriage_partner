@@ -19,7 +19,7 @@ export default function FirstTemplate() {
             홍길동 그리고 김미정
           </p>
           <div>
-            사진
+            <img src="/main.jpg" alt="Vercel Logo" className={styles.mainImg} />
           </div>
           <p>
             2020년 11월 28일(토) 오후 3:30

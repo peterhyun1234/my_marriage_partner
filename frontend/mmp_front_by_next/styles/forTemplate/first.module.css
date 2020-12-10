@@ -24,7 +24,12 @@
 .destDate{
     font-size: xx-large;
     margin: 0%;
+}
 
+.mainImg {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 .bigBox{
