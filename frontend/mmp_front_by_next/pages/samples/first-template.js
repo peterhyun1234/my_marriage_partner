@@ -29,15 +29,36 @@ export default function FirstTemplate() {
           </p>
         </div>
         <div className={styles.smallBox}>
-          <h1 className={styles.title}>
+          <p className={styles.boxTitle}>
             초대합니다
-          </h1>
-          <p>invatation</p>          
+          </p>
+          <p className={styles.boxSubTitle}>
+            I&nbsp;&nbsp;N&nbsp;&nbsp;V&nbsp;&nbsp;I&nbsp;&nbsp;T&nbsp;&nbsp;A&nbsp;&nbsp;T&nbsp;&nbsp;I&nbsp;&nbsp;O&nbsp;&nbsp;N
+          </p>        
           <br></br>
-          <p>뭐라머라 와서 축하해주세요. 뭐라머라 와서 축하해주세요. 뭐라머라 와서 축하해주세요. 뭐라머라 와서 축하해주세요. 뭐라머라 와서 축하해주세요.</p>          
+          <div className={styles.boxContents}>
+            <p className={styles.boxText}>사랑은 소유가 아니라</p>
+            <p className={styles.boxText}>동행임을 아는 두 사람은</p>
+            <p className={styles.boxText}>잡은 손을 놓지 않되</p>
+            <p className={styles.boxText}>함부로 잡아 끌지 않을 것이며</p>
+            <p className={styles.boxText}>서로의 두 눈을 고요히 바라보아</p>
+            <p className={styles.boxText}>말하지 않아도 같은 쪽으로 걸어가리라</p>
+            <p className={styles.boxText}>'아름다운 날에 부치다' 박미라</p>
+            <br></br>
+            <p className={styles.boxText}>가을에 맺어진 인연이</p>
+            <p className={styles.boxText}>가을에 동행을 시작하려고 합니다.</p>
+            <p className={styles.boxText}>그 시작에 응원의 걸음을 청합니다.</p>
+            <br></br>
+            <p className={styles.boxText}>* 코로나19로 참석이 어려우신 분들은</p>
+            <p className={styles.boxText}>마음으로 축하해주시면 감사하겠습니다.</p>
+            <br></br>
+          </div>
+            
           <hr width ="90%" className={styles.sampleLine}></hr>
-          <p>신랑 홍길동 + (전화 아이콘)</p>          
-          <p>신부 전현빈 + (전화 아이콘)</p>          
+
+          <p className={styles.boxText}>신랑 홍길동</p>
+          <p className={styles.boxText}>신부 김미정</p>
+
         </div>
         <div className={styles.bigBox}>
           <h1 className={styles.title}>

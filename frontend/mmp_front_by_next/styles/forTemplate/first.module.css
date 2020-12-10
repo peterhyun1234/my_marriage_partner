@@ -21,6 +21,23 @@
     font-size: x-small;
 }
 
+.boxTitle{
+    font-size: large;
+    margin: 20px 0px 0px 0px;
+}
+
+.boxSubTitle{
+    font-size: x-small;
+}
+
+.boxContents{
+    text-align: center;
+}
+
+.boxText{
+    font-size: small;
+}
+
 .destDate{
     font-size: xx-large;
     margin: 0%;
@@ -52,7 +69,7 @@
 }
 
 .sampleLine{
-    border: solid 1px #ffd6ff;
+    border: solid .5px #ffd6ff;
 }
 
 .footer {
