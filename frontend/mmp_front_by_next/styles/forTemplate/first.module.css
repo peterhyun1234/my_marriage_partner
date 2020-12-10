@@ -27,16 +27,37 @@
 }
 
 .boxSubTitle{
-    font-size: x-small;
+    font-size: small;
 }
 
 .boxContents{
     text-align: center;
+    color: darkslateblue;
 }
 
 .boxText{
     font-size: small;
 }
+
+
+.phoneBtnMan{
+    padding: 3px;
+    margin: 3px;
+    background-color: #0097a7;
+    color: white;
+    border: white;
+    border-radius: 10px;
+}
+
+.phoneBtnWoman{
+    padding: 3px;
+    margin: 3px;
+    background-color: #cc43cc;
+    color: white;
+    border: white;
+    border-radius: 10px;
+}
+
 
 .destDate{
     font-size: xx-large;
@@ -60,6 +81,7 @@
 
 .smallBox{
     margin: 1.5rem;
+    padding: 0.5rem 1.5rem 1.5rem 1.5rem;
     flex: 1;
     display: flex;
     flex-direction: column;

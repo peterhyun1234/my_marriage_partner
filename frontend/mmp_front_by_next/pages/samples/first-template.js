@@ -1,5 +1,10 @@
 import styles from '../../styles/forTemplate/first.module.css'
 import { Button } from '@material-ui/core';
+import PhoneIcon from '@material-ui/icons/Phone';
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
+import 'react-awesome-slider/dist/styles.css';
+
 
 export default function FirstTemplate() {
     return (
@@ -55,28 +60,46 @@ export default function FirstTemplate() {
           </div>
             
           <hr width ="90%" className={styles.sampleLine}></hr>
-
-          <p className={styles.boxText}>신랑 홍길동</p>
-          <p className={styles.boxText}>신부 김미정</p>
-
+          <div>
+            <span className={styles.boxText}>신랑 홍길동 </span>
+            <button className={styles.phoneBtnMan}>
+              <PhoneIcon/>
+            </button>
+          </div>
+          <div>
+            <span className={styles.boxText}>신부 김미정 </span>
+            <button className={styles.phoneBtnWoman}>
+              <PhoneIcon/>
+            </button>
+          </div>
+        </div>
+        <div className={styles.smallBox}>
+          <p className={styles.boxTitle}>
+            마음 전하는 곳
+          </p>
+          <p className={styles.boxSubTitle}>
+            T&nbsp;&nbsp;H&nbsp;&nbsp;A&nbsp;&nbsp;N&nbsp;&nbsp;K&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Y&nbsp;&nbsp;O&nbsp;&nbsp;U
+          </p>        
+          <br></br>
+          <div className={styles.boxContents}>
+            <p className={styles.boxText}>홍길동 신행은행 110-234-123456</p>
+            <p className={styles.boxText}>김미정 국디은행 123456-12-123123</p>
+          </div>
         </div>
         <div className={styles.bigBox}>
-          <h1 className={styles.title}>
-            Welcome to <a href="https://nextjs.org">Next.js!</a>
-          </h1>
-          <Button variant="contained">Default</Button>
-          <Button variant="contained" color="primary">
-            Primary
-          </Button>
-          <Button variant="contained" color="secondary">
-            Secondary
-          </Button>
-          <Button variant="contained" disabled>
-            Disabled
-          </Button>
-          <Button variant="contained" color="primary" href="#contained-buttons">
-            Link
-          </Button>
+          <p className={styles.boxTitle}>
+            사진 갤러리
+          </p>
+          <p className={styles.boxSubTitle}>
+            G&nbsp;&nbsp;A&nbsp;&nbsp;L&nbsp;&nbsp;L&nbsp;&nbsp;E&nbsp;&nbsp;R&nbsp;&nbsp;Y
+          </p>        
+          <br></br>
+          <AwesomeSlider animation="cubeAnimation">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+          </AwesomeSlider>
         </div>
         <div className={styles.smallBox}>
           <h1 className={styles.title}>
