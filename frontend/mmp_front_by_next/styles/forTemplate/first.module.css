@@ -43,8 +43,30 @@
     padding: 10px;
 }
 
+.deleteBtn{
+    font-family: 'Nanum Myeongjo', serif;
+    padding: 3px;
+    margin: 3px;
+    background-color: red;
+    color: white;
+    border: white;
+    border-radius: 10px;
+}
+
+.sendMsgBtn{
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: medium;
+    margin-top: 25px;
+    padding: 15px;
+    background-color: #645db3;
+    color: white;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+}
 
 .phoneBtnMan{
+    font-family: 'Nanum Myeongjo', serif;
     padding: 3px;
     margin: 3px;
     background-color: #0097a7;
@@ -62,6 +84,9 @@
     border-radius: 10px;
 }
 
+.tableHead{
+    background-color: #ffd6ff;
+}
 
 .destDate{
     font-size: xx-large;

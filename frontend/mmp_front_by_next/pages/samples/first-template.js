@@ -1,6 +1,8 @@
 import styles from '../../styles/forTemplate/first.module.css'
 import { Button } from '@material-ui/core';
 import PhoneIcon from '@material-ui/icons/Phone';
+import DeleteIcon from '@material-ui/icons/Delete';
+import SmsOutlinedIcon from '@material-ui/icons/SmsOutlined';
 import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
 import 'react-awesome-slider/dist/styles.css';
@@ -22,6 +24,13 @@ import Paper from '@material-ui/core/Paper';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 
+import TextField from '@material-ui/core/TextField';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+
 const useRowStyles = makeStyles({
   root: {
     '& > *': {
@@ -30,18 +39,11 @@ const useRowStyles = makeStyles({
   },
 });
 
-function createData(name, calories, fat, carbs, protein, price) {
+function createData(name, date, contents) {
   return {
     name,
-    calories,
-    fat,
-    carbs,
-    protein,
-    price,
-    history: [
-      { date: '2020-01-05', customerId: '11091700', amount: 3 },
-      { date: '2020-01-02', customerId: 'Anonymous', amount: 1 },
-    ],
+    date,
+    contents
   };
 }
 
@@ -61,40 +63,18 @@ function Row(props) {
         <TableCell component="th" scope="row">
           {row.name}
         </TableCell>
-        <TableCell align="right">{row.calories}</TableCell>
-        <TableCell align="right">{row.fat}</TableCell>
-        <TableCell align="right">{row.carbs}</TableCell>
-        <TableCell align="right">{row.protein}</TableCell>
+        <TableCell align="right">{row.date}</TableCell>
       </TableRow>
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box margin={1}>
-              <Typography variant="h6" gutterBottom component="div">
-                History
-              </Typography>
               <Table size="small" aria-label="purchases">
-                <TableHead>
-                  <TableRow>
-                    <TableCell>Date</TableCell>
-                    <TableCell>Customer</TableCell>
-                    <TableCell align="right">Amount</TableCell>
-                    <TableCell align="right">Total price ($)</TableCell>
-                  </TableRow>
-                </TableHead>
                 <TableBody>
-                  {row.history.map((historyRow) => (
-                    <TableRow key={historyRow.date}>
-                      <TableCell component="th" scope="row">
-                        {historyRow.date}
-                      </TableCell>
-                      <TableCell>{historyRow.customerId}</TableCell>
-                      <TableCell align="right">{historyRow.amount}</TableCell>
-                      <TableCell align="right">
-                        {Math.round(historyRow.amount * row.price * 100) / 100}
-                      </TableCell>
-                    </TableRow>
-                  ))}
+                  <TableCell component="th" scope="row">
+                    {row.contents}
+                  </TableCell>
+                  <button className={styles.deleteBtn}><DeleteIcon/></button>
                 </TableBody>
               </Table>
             </Box>
@@ -107,33 +87,48 @@ function Row(props) {
 
 Row.propTypes = {
   row: PropTypes.shape({
-    calories: PropTypes.number.isRequired,
-    carbs: PropTypes.number.isRequired,
-    fat: PropTypes.number.isRequired,
-    history: PropTypes.arrayOf(
-      PropTypes.shape({
-        amount: PropTypes.number.isRequired,
-        customerId: PropTypes.string.isRequired,
-        date: PropTypes.string.isRequired,
-      }),
-    ).isRequired,
     name: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    protein: PropTypes.number.isRequired,
+    contents: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired
   }).isRequired,
 };
 
 const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0, 3.99),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3, 4.99),
-  createData('Eclair', 262, 16.0, 24, 6.0, 3.79),
-  createData('Cupcake', 305, 3.7, 67, 4.3, 2.5),
-  createData('Gingerbread', 356, 16.0, 49, 3.9, 1.5),
+  createData("전현빈", "2019-12-03", "오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~"),
+  createData("김선영", "2020-12-03", "와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~"),
+  createData("전현빈", "2019-12-03", "오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~"),
+  createData("김선영", "2020-12-03", "와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~"),
+  createData("전현빈", "2019-12-03", "오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~"),
+  createData("김선영", "2020-12-03", "와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~"),
+  createData("전현빈", "2019-12-03", "오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~"),
+  createData("김선영", "2020-12-03", "와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~"),
+  createData("전현빈", "2019-12-03", "오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~"),
+  createData("김선영", "2020-12-03", "와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~"),
+  createData("전현빈", "2019-12-03", "오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~"),
+  createData("김선영", "2020-12-03", "와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~"),
+
 ];
 
 
 
 export default function FirstTemplate() {
+
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+      setOpen(true);
+    };
+
+    const handleClose = () => {
+      setOpen(false);
+    };
+
+    const msgSubmit = (msg) => {
+      console.log(msg);
+      setOpen(false);
+    };
+
+
     return (
     <div className={styles.container}>
 
@@ -239,14 +234,11 @@ export default function FirstTemplate() {
 
           <TableContainer component={Paper}>
             <Table aria-label="collapsible table">
-              <TableHead>
+              <TableHead className={styles.tableHead}>
                 <TableRow>
                   <TableCell />
-                  <TableCell>Dessert (100g serving)</TableCell>
-                  <TableCell align="right">Calories</TableCell>
-                  <TableCell align="right">Fat&nbsp;(g)</TableCell>
-                  <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-                  <TableCell align="right">Protein&nbsp;(g)</TableCell>
+                  <TableCell>작성자 이름</TableCell>
+                  <TableCell align="right">Date</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -256,6 +248,10 @@ export default function FirstTemplate() {
               </TableBody>
             </Table>
           </TableContainer>
+
+          <button className={styles.sendMsgBtn} onClick={handleClickOpen}>
+            <SmsOutlinedIcon style={{ fontSize: 15 }}/> 축하 메세지 작성
+          </button>
         </div>
         <div className={styles.smallBox}>
           <h1 className={styles.title}>
@@ -287,6 +283,30 @@ export default function FirstTemplate() {
           <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
         </a>
       </footer>
+      <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+        <DialogTitle id="form-dialog-title">축하 메세지 작성</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            결혼을 축하하는 글을 댓글로 작성해주세요.
+          </DialogContentText>
+          <TextField
+            autoFocus
+            margin="dense"
+            id="name"
+            label="Email Address"
+            type="email"
+            fullWidth
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            취소
+          </Button>
+          <Button onClick={msgSubmit} color="primary">
+            작성하기
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
     )
 }
