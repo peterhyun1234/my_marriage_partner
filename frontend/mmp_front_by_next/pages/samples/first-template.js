@@ -123,11 +123,16 @@ export default function FirstTemplate() {
       setOpen(false);
     };
 
-    const msgSubmit = (msg) => {
-      console.log(msg);
-      setOpen(false);
-    };
+    const [email, setEmail] = React.useState('');
+    const [password, setPassword] = React.useState('');
 
+    function handleSubmit(event) {
+        event.preventDefault();
+        console.log( 'Email:', email, 'Password: ', password); 
+       // You should see email and password in console.
+       // ..code to submit form to backend here...
+
+    }
 
     return (
     <div className={styles.container}>
@@ -283,26 +288,35 @@ export default function FirstTemplate() {
           <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
         </a>
       </footer>
-      <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+      <Dialog open={open} onClose={handleClose} onSubmit={handleSubmit} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">축하 메세지 작성</DialogTitle>
         <DialogContent>
-          <DialogContentText>
-            결혼을 축하하는 글을 댓글로 작성해주세요.
-          </DialogContentText>
           <TextField
+            id="name"
             autoFocus
             margin="dense"
-            id="name"
-            label="Email Address"
-            type="email"
+            label="성함을 입력해주세요"
+            type="name"
+            fullWidth                 
+            value={email}
+            onInput={ e=>setEmail(e.target.value)}
+          />
+          <TextField
+            id="contents"
+            autoFocus
+            margin="dense"
+            label="메세지 내용"
+            type="contents"
             fullWidth
+            value={password}
+            onInput={ e=>setPassword(e.target.value)}
           />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
             취소
           </Button>
-          <Button onClick={msgSubmit} color="primary">
+          <Button onClick={handleClose} type="submit" color="primary">
             작성하기
           </Button>
         </DialogActions>
