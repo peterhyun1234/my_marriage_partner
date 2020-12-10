@@ -94,11 +94,12 @@ export default function FirstTemplate() {
             G&nbsp;&nbsp;A&nbsp;&nbsp;L&nbsp;&nbsp;L&nbsp;&nbsp;E&nbsp;&nbsp;R&nbsp;&nbsp;Y
           </p>        
           <br></br>
-          <AwesomeSlider animation="cubeAnimation">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
+          <AwesomeSlider animation="cubeAnimation" className={styles.sliderDiv}>
+            <div data-src="/img1.jpg" />
+            <div data-src="/img2.jpg" />
+            <div data-src="/img3.jpg" />
+            <div data-src="/img4.jpg" />
+            <div data-src="/img5.jpg" />
           </AwesomeSlider>
         </div>
         <div className={styles.smallBox}>

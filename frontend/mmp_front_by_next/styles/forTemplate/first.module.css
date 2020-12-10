@@ -39,6 +39,10 @@
     font-size: small;
 }
 
+.sliderDiv{
+    padding: 10px;
+}
+
 
 .phoneBtnMan{
     padding: 3px;
@@ -71,6 +75,7 @@
 }
 
 .bigBox{
+    padding: 0.5rem 1.5rem 3.5rem 1.5rem;
     flex: 1;
     display: flex;
     flex-direction: column;
