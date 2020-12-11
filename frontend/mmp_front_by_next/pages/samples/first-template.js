@@ -96,17 +96,6 @@ Row.propTypes = {
 const rows = [
   createData("전현빈", "2019-12-03", "오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~"),
   createData("김선영", "2020-12-03", "와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~"),
-  createData("전현빈", "2019-12-03", "오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~"),
-  createData("김선영", "2020-12-03", "와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~"),
-  createData("전현빈", "2019-12-03", "오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~"),
-  createData("김선영", "2020-12-03", "와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~"),
-  createData("전현빈", "2019-12-03", "오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~"),
-  createData("김선영", "2020-12-03", "와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~"),
-  createData("전현빈", "2019-12-03", "오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~"),
-  createData("김선영", "2020-12-03", "와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~"),
-  createData("전현빈", "2019-12-03", "오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~"),
-  createData("김선영", "2020-12-03", "와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~"),
-
 ];
 
 
@@ -123,15 +112,13 @@ export default function FirstTemplate() {
       setOpen(false);
     };
 
-    const [email, setEmail] = React.useState('');
-    const [password, setPassword] = React.useState('');
+    const [name, setName] = React.useState('');
+    const [contents, setContents] = React.useState('');
 
     function handleSubmit(event) {
-        event.preventDefault();
-        console.log( 'Email:', email, 'Password: ', password); 
-       // You should see email and password in console.
-       // ..code to submit form to backend here...
-
+      event.preventDefault();
+      console.log( 'name:', name, 'contents: ', contents);
+      setOpen(false);
     }
 
     return (
@@ -259,22 +246,13 @@ export default function FirstTemplate() {
           </button>
         </div>
         <div className={styles.smallBox}>
-          <h1 className={styles.title}>
-            Welcome to <a href="https://nextjs.org">Next.js!</a>
-          </h1>
-          <Button variant="contained">Default</Button>
-          <Button variant="contained" color="primary">
-            Primary
-          </Button>
-          <Button variant="contained" color="secondary">
-            Secondary
-          </Button>
-          <Button variant="contained" disabled>
-            Disabled
-          </Button>
-          <Button variant="contained" color="primary" href="#contained-buttons">
-            Link
-          </Button>
+          <p className={styles.boxTitle}>
+            오시는 길
+          </p>
+          <p className={styles.boxSubTitle}>
+            L&nbsp;&nbsp;O&nbsp;&nbsp;C&nbsp;&nbsp;A&nbsp;&nbsp;T&nbsp;&nbsp;I&nbsp;&nbsp;O&nbsp;&nbsp;N
+          </p>        
+          <br></br>
         </div>
       </main>
 
@@ -298,8 +276,8 @@ export default function FirstTemplate() {
             label="성함을 입력해주세요"
             type="name"
             fullWidth                 
-            value={email}
-            onInput={ e=>setEmail(e.target.value)}
+            value={name}
+            onInput={ e=>setName(e.target.value)}
           />
           <TextField
             id="contents"
@@ -308,15 +286,15 @@ export default function FirstTemplate() {
             label="메세지 내용"
             type="contents"
             fullWidth
-            value={password}
-            onInput={ e=>setPassword(e.target.value)}
+            value={contents}
+            onInput={ e=>setContents(e.target.value)}
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={handleClose} color="secondary">
             취소
           </Button>
-          <Button onClick={handleClose} type="submit" color="primary">
+          <Button onClick={handleSubmit} type="submit" color="primary">
             작성하기
           </Button>
         </DialogActions>
