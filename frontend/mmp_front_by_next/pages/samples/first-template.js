@@ -31,7 +31,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-import { RenderAfterNavermapsLoaded, NaverMap, Marker } from "react-naver-maps";
+import { RenderAfterNavermapsLoaded, NaverMap } from 'react-naver-maps'
 
 const useRowStyles = makeStyles({
   root: {
@@ -100,6 +100,7 @@ const rows = [
   createData("김선영", "2020-12-03", "와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~"),
 ];
 
+const YOUR_CLIENT_ID = "321ahmtgua";
 
 
 export default function FirstTemplate() {
@@ -255,21 +256,18 @@ export default function FirstTemplate() {
             L&nbsp;&nbsp;O&nbsp;&nbsp;C&nbsp;&nbsp;A&nbsp;&nbsp;T&nbsp;&nbsp;I&nbsp;&nbsp;O&nbsp;&nbsp;N
           </p>
           
-          {/* 네이버 지도 연동! */}
           <RenderAfterNavermapsLoaded
-            ncpClientId="321ahmtgua" // 자신의 네이버 계정에서 발급받은 Client ID
-            error={<p>Maps Load Error</p>}
-            loading={<p>Maps Loading...</p>}
+            clientId={YOUR_CLIENT_ID}
           >
-            <NaverMap
-              mapDivId={"map"} // default: react-naver-map
+            <NaverMap 
+              mapDivId={'maps-getting-started-uncontrolled'} // default: react-naver-map
               style={{
-                width: 800, // 네이버지도 가로 길이
-                height: 800 // 네이버지도 세로 길이
+                width: '100%',
+                height: '400px',
               }}
-              defaultCenter={{ lat: 37.554722, lng: 126.970833 }} // 지도 초기 위치
-            >
-            </NaverMap>
+              defaultCenter={{ lat: 37.3595704, lng: 127.105399 }}
+              defaultZoom={10}
+            />
           </RenderAfterNavermapsLoaded>
 
           <br></br>
