@@ -65,6 +65,18 @@
     border-radius: 5px;
 }
 
+.imgRegisterBtn{
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: small;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #51977c;
+    color: white;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+}
+
 .phoneBtnMan{
     font-family: 'Nanum Myeongjo', serif;
     padding: 3px;
@@ -128,13 +140,29 @@
     width: 100%;
     height: 100px;
     border-top: 1px solid #eaeaea;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .footer img {
     margin-left: 0.5rem;
+}
+
+.footerText{
+    font-size: medium;
+    color: black;
+    background-color: #fffeed;
+    margin: 5px;
+    border-radius: 8px;
+    text-align: center;
+    padding: 4px;
+}
+
+.Github{
+    color: black;
+    background-color: #fffeed;
+    margin: 0px 30% 0px 30%;
+    border-radius: 8px;
 }
   
 .footer a {

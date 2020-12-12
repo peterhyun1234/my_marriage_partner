@@ -2,6 +2,7 @@ import styles from '../../styles/forTemplate/first.module.css'
 import { Button } from '@material-ui/core';
 import PhoneIcon from '@material-ui/icons/Phone';
 import DeleteIcon from '@material-ui/icons/Delete';
+import GitHubIcon from '@material-ui/icons/GitHub';
 import SmsOutlinedIcon from '@material-ui/icons/SmsOutlined';
 import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
@@ -31,7 +32,9 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-import { RenderAfterNavermapsLoaded, NaverMap } from 'react-naver-maps'
+// import { Map, GoogleApiWrapper } from "google-maps-react";
+
+// import { RenderAfterNavermapsLoaded, NaverMap } from 'react-naver-maps'
 
 const useRowStyles = makeStyles({
   root: {
@@ -97,10 +100,8 @@ Row.propTypes = {
 
 const rows = [
   createData("전현빈", "2019-12-03", "오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~오우 오우 너무너무 축하하고~"),
-  createData("김선영", "2020-12-03", "와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~"),
+  createData("전성빈", "2020-12-03", "와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~와우 와우 엄빌리버블~~"),
 ];
-
-const YOUR_CLIENT_ID = "321ahmtgua";
 
 
 export default function FirstTemplate() {
@@ -220,6 +221,9 @@ export default function FirstTemplate() {
           </AwesomeSlider>
           <br></br>
           <br></br>
+          <button className={styles.imgRegisterBtn} onClick={handleClickOpen}>
+            <SmsOutlinedIcon style={{ fontSize: 15 }}/> 사진 재등록
+          </button>
         </div>
         <div className={styles.bigBox}>
           <p className={styles.boxTitle}>
@@ -256,7 +260,7 @@ export default function FirstTemplate() {
             L&nbsp;&nbsp;O&nbsp;&nbsp;C&nbsp;&nbsp;A&nbsp;&nbsp;T&nbsp;&nbsp;I&nbsp;&nbsp;O&nbsp;&nbsp;N
           </p>
           
-          <RenderAfterNavermapsLoaded
+          {/* <RenderAfterNavermapsLoaded
             clientId={YOUR_CLIENT_ID}
           >
             <NaverMap 
@@ -268,20 +272,29 @@ export default function FirstTemplate() {
               defaultCenter={{ lat: 37.3595704, lng: 127.105399 }}
               defaultZoom={10}
             />
-          </RenderAfterNavermapsLoaded>
+          </RenderAfterNavermapsLoaded> */}
+
+          {/* <div className='styles.MapAPI'>
+            <Map
+              google={this.props.google}
+              zoom={15}
+              initialCenter={{ lat: 37.5, lng: 127 }}
+            ></Map>
+          </div> */}
 
           <br></br>
         </div>
       </main>
 
       <footer className={styles.footer}>
+        <p className={styles.footerText}>자세한 설명과 소스는 링크 참조해주세요.</p>      
         <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          href="https://github.com/peterhyun1234/my_marriage_partner"
           target="_blank"
           rel="noopener noreferrer"
+          className={styles.Github}
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
+          <GitHubIcon/> GitHub
         </a>
       </footer>
       <Dialog open={open} onClose={handleClose} onSubmit={handleSubmit} aria-labelledby="form-dialog-title">
