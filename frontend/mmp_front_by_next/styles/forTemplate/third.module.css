@@ -1,9 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+
+.container {
+    font-family: 'Nanum Myeongjo', serif;
+    color: #cc43cc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url(https://media.giphy.com/media/2VUIE0b9l1Sdq/giphy.gif); 
+}
+
 .main {
-    padding: 5rem 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title{
+    font-size: x-small;
+}
+
+.boxTitle{
+    font-size: large;
+    margin: 20px 0px 0px 0px;
+}
+
+.boxSubTitle{
+    font-size: small;
+}
+
+.boxContents{
+    text-align: center;
+    color: darkslateblue;
+}
+
+.boxText{
+    font-size: small;
+}
+
+.sliderDiv{
+    padding: 10px;
+}
+
+.deleteBtn{
+    font-family: 'Nanum Myeongjo', serif;
+    padding: 3px;
+    margin: 3px;
+    background-color: red;
+    color: white;
+    border: white;
+    border-radius: 10px;
+}
+
+.sendMsgBtn{
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: medium;
+    margin-top: 25px;
+    padding: 15px;
+    background-color: #645db3;
+    color: white;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+}
+
+.imgRegisterBtn{
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: small;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #51977c;
+    color: white;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+}
+
+.phoneBtnMan{
+    font-family: 'Nanum Myeongjo', serif;
+    padding: 3px;
+    margin: 3px;
+    background-color: #0097a7;
+    color: white;
+    border: white;
+    border-radius: 10px;
+}
+
+.phoneBtnWoman{
+    padding: 3px;
+    margin: 3px;
+    background-color: #cc43cc;
+    color: white;
+    border: white;
+    border-radius: 10px;
+}
+
+.tableHead{
+    background-color: #ffd6ff;
+}
+
+.destDate{
+    font-size: xx-large;
+    margin: 0%;
+}
+
+.mainImg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.bigBox{
+    padding: 0.5rem 1.5rem 3.5rem 1.5rem;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url(https://media.giphy.com/media/cmegx6SssTKmEFEcwj/giphy.gif) repeat-y;
-  }
+    background-color: #fffeed;
+}
+
+.smallBox{
+    margin: 1.5rem;
+    padding: 0.5rem 1.5rem 1.5rem 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fffeed;
+}
+
+.sampleLine{
+    border: solid .5px #ffd6ff;
+}
+
+.footer {
+    width: 100%;
+    height: 100px;
+    border-top: 1px solid #eaeaea;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer img {
+    margin-left: 0.5rem;
+}
+
+.footerText{
+    font-size: medium;
+    color: black;
+    background-color: #fffeed;
+    margin: 5px;
+    border-radius: 8px;
+    text-align: center;
+    padding: 4px;
+}
+
+.Github{
+    color: black;
+    background-color: #fffeed;
+    margin: 0px 30% 0px 30%;
+    border-radius: 8px;
+}
+  
+.footer a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    height: 1em;
+}
