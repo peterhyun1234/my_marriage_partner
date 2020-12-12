@@ -90,14 +90,14 @@
 .phoneBtnWoman{
     padding: 3px;
     margin: 3px;
-    background-color: #cc43cc;
+    background-color: #35ab3c;
     color: white;
     border: white;
     border-radius: 10px;
 }
 
 .tableHead{
-    background-color: #ffd6ff;
+    background-color: #35ab3c;
 }
 
 .destDate{
@@ -133,7 +133,7 @@
 }
 
 .sampleLine{
-    border: solid .5px #ffd6ff;
+    border: solid .5px #35ab3c;
 }
 
 .footer {
