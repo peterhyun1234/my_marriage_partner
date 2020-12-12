@@ -2,12 +2,12 @@
 
 .container {
     font-family: 'Nanum Myeongjo', serif;
-    color: #cc43cc;
+    color: #7d7d7d;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: url(https://media.giphy.com/media/2VUIE0b9l1Sdq/giphy.gif); 
+    background-image: url(https://media.giphy.com/media/gH2bKIakvLuW4/giphy.gif); 
 }
 
 .main {
@@ -90,14 +90,14 @@
 .phoneBtnWoman{
     padding: 3px;
     margin: 3px;
-    background-color: #cc43cc;
+    background-color: #7d7d7d;
     color: white;
     border: white;
     border-radius: 10px;
 }
 
 .tableHead{
-    background-color: #ffd6ff;
+    background-color: #7d7d7d;
 }
 
 .destDate{
@@ -118,7 +118,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #fffeed;
+    background-color: #dedede;
 }
 
 .smallBox{
@@ -129,11 +129,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #fffeed;
+    background-color: #dedede;
 }
 
 .sampleLine{
-    border: solid .5px #ffd6ff;
+    border: solid .5px #7d7d7d;
 }
 
 .footer {
