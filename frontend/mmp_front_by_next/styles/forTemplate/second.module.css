@@ -2,12 +2,12 @@
 
 .container {
     font-family: 'Nanum Myeongjo', serif;
-    color: #cc43cc;
+    color: #35ab3c;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: url(https://media.giphy.com/media/2VUIE0b9l1Sdq/giphy.gif); 
+    background-image: url(https://media.giphy.com/media/6g9fN5IYV9Oc8/giphy.gif); 
 }
 
 .main {
@@ -118,7 +118,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #fffeed;
+    background-color: #e0ffe2;
 }
 
 .smallBox{
@@ -129,7 +129,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #fffeed;
+    background-color: #e0ffe2;
 }
 
 .sampleLine{
