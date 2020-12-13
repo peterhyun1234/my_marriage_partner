@@ -13,6 +13,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import Filter1Icon from '@material-ui/icons/Filter1';
 import Filter2Icon from '@material-ui/icons/Filter2';
 import Filter3Icon from '@material-ui/icons/Filter3';
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -240,8 +241,13 @@ export default function Home() {
             <a
               className={styles.smallBox}
             >
-              <h3>First-sample &rarr;</h3>
-              <p>Discover and deploy boilerplate example Next.js projects.</p>
+              <h3 className={styles.cardTitle}>청첩장 샘플 1</h3>
+              <img src="/t1.png" className={styles.templateImg} />
+              <br></br>
+              <p className={styles.leftText}>차갑고 깔끔한 스타일에</p>
+              <p className={styles.leftText}>잘 어울리는 디자인으로</p>
+              <p className={styles.leftText}>주로 겨울에 사용됩니다.</p>
+              <p className={styles.blueText}>자세히 보기</p>
             </a>
           </Link>
 
@@ -249,8 +255,13 @@ export default function Home() {
             <a
               className={styles.smallBox}
             >
-              <h3>Second-sample &rarr;</h3>
-              <p>Discover and deploy boilerplate example Next.js projects.</p>
+              <h3 className={styles.cardTitle}>청첩장 샘플 2</h3>
+              <img src="/t2.png" className={styles.templateImg} />
+              <br></br>
+              <p className={styles.leftText}>활발하고 세련된 스타일에</p>
+              <p className={styles.leftText}>잘 어울리는 디자인으로</p>
+              <p className={styles.leftText}>주로 가을에 사용됩니다.</p>
+              <p className={styles.blueText}>자세히 보기</p>
             </a>
           </Link>
           
@@ -258,8 +269,27 @@ export default function Home() {
             <a
               className={styles.smallBox}
             >
-              <h3>Third-sample &rarr;</h3>
-              <p>Discover and deploy boilerplate example Next.js projects.</p>
+              <h3 className={styles.cardTitle}>청첩장 샘플 3</h3>
+              <img src="/t3.png" className={styles.templateImg} />
+              <br></br>
+              <p className={styles.leftText}>발랄하고 상쾌한 스타일에</p>
+              <p className={styles.leftText}>잘 어울리는 디자인으로</p>
+              <p className={styles.leftText}>주로 봄에 사용됩니다.</p>
+              <p className={styles.blueText}>자세히 보기</p>
+            </a>
+          </Link>
+
+          <Link href="/samples/third-template">
+            <a
+              className={styles.smallBox}
+            >
+              <h3 className={styles.cardTitle}>청첩장 만들기</h3>
+              <img src="/t3.png" className={styles.templateImg} />
+              <br></br>
+              <p className={styles.leftText}>발랄하고 상쾌한 스타일에</p>
+              <p className={styles.leftText}>잘 어울리는 디자인으로</p>
+              <p className={styles.leftText}>주로 봄에 사용됩니다.</p>
+              <p className={styles.blueText}>자세히 보기</p>
             </a>
           </Link>
 
@@ -267,13 +297,14 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
+        <p className={styles.footerText}>자세한 설명과 소스는 링크 참조해주세요.</p>      
         <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          href="https://github.com/peterhyun1234/my_marriage_partner"
           target="_blank"
           rel="noopener noreferrer"
+          className={styles.Github}
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
+          <GitHubIcon/> GitHub
         </a>
       </footer>
     </div>
