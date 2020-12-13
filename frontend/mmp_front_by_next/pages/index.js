@@ -136,7 +136,7 @@ export default function Home() {
       </List>
       <Divider />
       <List>
-        <ListItem button key={"make"} >
+        <ListItem button key={"make"} disabled={true}>
             <Link href="/wedding-page/make"><ListItemIcon><PostAddIcon /></ListItemIcon></Link>
             <Link href="/wedding-page/make"><ListItemText primary={"청첩장 만들기"} /></Link>
         </ListItem>

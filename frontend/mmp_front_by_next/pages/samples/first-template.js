@@ -79,7 +79,6 @@ function Row(props) {
                   <TableCell component="th" scope="row">
                     {row.contents}
                   </TableCell>
-                  <button className={styles.deleteBtn}><DeleteIcon/></button>
                 </TableBody>
               </Table>
             </Box>
@@ -221,9 +220,6 @@ export default function FirstTemplate() {
           </AwesomeSlider>
           <br></br>
           <br></br>
-          <button className={styles.imgRegisterBtn} onClick={handleClickOpen}>
-            <SmsOutlinedIcon style={{ fontSize: 15 }}/> 사진 재등록
-          </button>
         </div>
         <div className={styles.bigBox}>
           <p className={styles.boxTitle}>
