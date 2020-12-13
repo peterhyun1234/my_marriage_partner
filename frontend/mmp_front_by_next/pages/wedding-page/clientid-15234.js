@@ -32,6 +32,87 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
+import {DropzoneDialog, DropzoneArea} from 'material-ui-dropzone'
+
+// export default class DropzoneDialogExample extends Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//             open: false,
+//             files: []
+//         };
+//     }
+
+//     handleClose() {
+//         this.setState({
+//             open: false
+//         });
+//     }
+
+//     handleSave(files) {
+//         //Saving files to state for further use and closing Modal.
+//         this.setState({
+//             files: files,
+//             open: false
+//         });
+//     }
+
+//     handleOpen() {
+//         this.setState({
+//             open: true,
+//         });
+//     }
+
+//     render() {
+//         return (
+//             <div>
+//                 <Button onClick={this.handleOpen.bind(this)}>
+//                   Add Image
+//                 </Button>
+//                 <DropzoneDialog
+//                     open={this.state.open}
+//                     onSave={this.handleSave.bind(this)}
+//                     acceptedFiles={['image/jpeg', 'image/png', 'image/bmp']}
+//                     showPreviews={true}
+//                     maxFileSize={5000000}
+//                     onClose={this.handleClose.bind(this)}
+//                 />
+//             </div>
+//         );
+//     }
+// }
+
+
+
+
+// class DropzoneAreaExample extends Component{
+//   constructor(props){
+//     super(props);
+//     this.state = {
+//       files: []
+//     };
+//   }
+//   handleChange(files){
+//     this.setState({
+//       files: files
+//     });
+//   }
+//   render(){
+//     return (
+//       <DropzoneArea
+//         onChange={this.handleChange.bind(this)}
+//         />
+//     )
+//   }
+// }
+
+// export default DropzoneAreaExample;
+
+
+
+
+
+
 // import { Map, GoogleApiWrapper } from "google-maps-react";
 
 // import { RenderAfterNavermapsLoaded, NaverMap } from 'react-naver-maps'
@@ -106,6 +187,16 @@ const rows = [
 
 export default function FirstTemplate() {
 
+    const [imgOpen, setImgOpen] = React.useState(false);
+
+    const handleImgClose = () => {
+      setImgOpen(false);
+    };
+
+    const handleImgOpen = () => {
+      setImgOpen(true);
+    };
+
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -130,7 +221,7 @@ export default function FirstTemplate() {
 
       <main className={styles.main}>
         <div className={styles.smallBox}>
-          ~님 방문을 환영합니다.
+          전현빈님 방문을 환영합니다.
         </div>
         
         <div className={styles.bigBox}>
@@ -225,9 +316,20 @@ export default function FirstTemplate() {
           </AwesomeSlider>
           <br></br>
           <br></br>
-          <button className={styles.imgRegisterBtn} onClick={handleClickOpen}>
+          <button className={styles.imgRegisterBtn} onClick={handleImgOpen}>
             <SmsOutlinedIcon style={{ fontSize: 15 }}/> 사진 재등록
           </button>
+
+          <div>
+            <DropzoneDialog
+                open={imgOpen}
+                acceptedFiles={['image/jpeg', 'image/png', 'image/bmp']}
+                showPreviews={true}
+                maxFileSize={5000000}
+                onClose={handleImgClose}
+            />
+          </div>
+
         </div>
         <div className={styles.bigBox}>
           <p className={styles.boxTitle}>
