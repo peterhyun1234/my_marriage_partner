@@ -14,6 +14,8 @@ import Filter1Icon from '@material-ui/icons/Filter1';
 import Filter2Icon from '@material-ui/icons/Filter2';
 import Filter3Icon from '@material-ui/icons/Filter3';
 import GitHubIcon from '@material-ui/icons/GitHub';
+import FindInPageIcon from '@material-ui/icons/FindInPage';
+import PostAddIcon from '@material-ui/icons/PostAdd';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -135,11 +137,11 @@ export default function Home() {
       <Divider />
       <List>
         <ListItem button key={"make"} >
-            <Link href="/wedding-page/make"><ListItemIcon><Filter1Icon /></ListItemIcon></Link>
+            <Link href="/wedding-page/make"><ListItemIcon><PostAddIcon /></ListItemIcon></Link>
             <Link href="/wedding-page/make"><ListItemText primary={"청첩장 만들기"} /></Link>
         </ListItem>
         <ListItem button key={"look"} >
-            <Link href="/wedding-page/clientid-15234"><ListItemIcon><Filter2Icon /></ListItemIcon></Link>
+            <Link href="/wedding-page/clientid-15234"><ListItemIcon><FindInPageIcon  /></ListItemIcon></Link>
             <Link href="/wedding-page/clientid-15234"><ListItemText primary={"내 청첩장 확인"} /></Link>
         </ListItem>
       </List>
@@ -203,7 +205,7 @@ export default function Home() {
                     <a
                       className={styles.card}
                     >
-                      <p>로그 인</p>
+                      <p>로그인</p>
                     </a>
                   </Link>
                 </MenuItem>
@@ -227,13 +229,12 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <img src="https://media.giphy.com/media/yrhhmre5fN2PtRujfo/giphy.gif" className={styles.helloImg}/>
 
         <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
+          당신의 성공적인 결혼식을 도와드리고 싶습니다!
+          <br></br>
+          <code className={styles.code}>My Marriage Partner</code>
         </p>
 
         <div className={styles.grid}>
@@ -279,17 +280,17 @@ export default function Home() {
             </a>
           </Link>
 
-          <Link href="/samples/third-template">
+          <Link href="/wedding-page/make">
             <a
               className={styles.smallBox}
             >
               <h3 className={styles.cardTitle}>청첩장 만들기</h3>
-              <img src="/t3.png" className={styles.templateImg} />
+              <img src="/makewd.jpg" className={styles.makeImg} />
               <br></br>
-              <p className={styles.leftText}>발랄하고 상쾌한 스타일에</p>
-              <p className={styles.leftText}>잘 어울리는 디자인으로</p>
-              <p className={styles.leftText}>주로 봄에 사용됩니다.</p>
-              <p className={styles.blueText}>자세히 보기</p>
+              <p className={styles.leftText}>자신이 원하는대로 배경과</p>
+              <p className={styles.leftText}>구조를 마음껏</p>
+              <p className={styles.leftText}>디자인 해보세요.</p>
+              <p className={styles.blueText}>만들러 가기</p>
             </a>
           </Link>
 
