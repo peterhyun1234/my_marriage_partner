@@ -10,6 +10,9 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import Filter1Icon from '@material-ui/icons/Filter1';
+import Filter2Icon from '@material-ui/icons/Filter2';
+import Filter3Icon from '@material-ui/icons/Filter3';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -45,9 +48,30 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+function sampleFunc(param){
+
+  // let userInfo = {
+  //     name: 'HB',
+  //     age: 26
+  // };
+  
+  // localStorage.setItem("user", JSON.stringify(userInfo));
+  // let getinfo = localStorage.getItem("user");
+
+  // console.log(getinfo);
+
+}
+
 
 
 export default function Home() {
+
+
+
+  // sampleFunc("dd");
+
+  
+  
 
   const classes = useStyles();
   const [state, setState] = React.useState({
@@ -63,7 +87,12 @@ export default function Home() {
   };
 
   const handleMenu = (event) => {
+    // console.log(event.currentTarget);
     setAnchorEl(event.currentTarget);
+  };
+
+  const handleLogin = () => {
+    setAnchorEl(null);
   };
 
   const handleClose = () => {
@@ -89,41 +118,59 @@ export default function Home() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+        <ListItem button key={"t1"} >
+            <Link href="/samples/first-template"><ListItemIcon><Filter1Icon /></ListItemIcon></Link>
+            <Link href="/samples/first-template"><ListItemText primary={"청첩장 예시 1"} /></Link>
+        </ListItem>
+        <ListItem button key={"t2"} >
+            <Link href="/samples/second-template"><ListItemIcon><Filter2Icon /></ListItemIcon></Link>
+            <Link href="/samples/second-template"><ListItemText primary={"청첩장 예시 2"} /></Link>
+        </ListItem>
+        <ListItem button key={"t3"} >
+            <Link href="/samples/third-template"><ListItemIcon><Filter3Icon /></ListItemIcon></Link>
+            <Link href="/samples/third-template"><ListItemText primary={"청첩장 예시 3"} /></Link>
+        </ListItem>
       </List>
       <Divider />
       <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+        <ListItem button key={"make"} >
+            <Link href="/wedding-page/make"><ListItemIcon><Filter1Icon /></ListItemIcon></Link>
+            <Link href="/wedding-page/make"><ListItemText primary={"청첩장 만들기"} /></Link>
+        </ListItem>
+        <ListItem button key={"look"} >
+            <Link href="/wedding-page/clientid-15234"><ListItemIcon><Filter2Icon /></ListItemIcon></Link>
+            <Link href="/wedding-page/clientid-15234"><ListItemText primary={"내 청첩장 확인"} /></Link>
+        </ListItem>
+      </List>
+      <Divider />
+      <List>
+        <ListItem button key={"req"} >
+            <Link href="/"><ListItemIcon><MailIcon /></ListItemIcon></Link>
+            <Link href="/"><ListItemText primary={"개발자에게 건의"} /></Link>
+        </ListItem>
       </List>
     </div>
   );
 
   return (
+    
     <div className={classes.root}>
-      <FormGroup>
-        <FormControlLabel
-          control={<Switch checked={auth} onChange={handleChange} aria-label="login switch" />}
-          label={auth ? 'Logout' : 'Login'}
-        />
-      </FormGroup>
       <AppBar position="static">
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
+          <IconButton edge="start" className={styles.menuButton} color="inherit" aria-label="menu">
+            {[''].map((anchor) => (
+              <React.Fragment key={anchor}>
+                <Button onClick={toggleDrawer(anchor, true)}><MenuIcon className={styles.menuButton}/></Button>
+                <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
+                  {list(anchor)}
+                </Drawer>
+              </React.Fragment>
+            ))}
+            
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            Photos
-          </Typography>
+          <p  className={styles.appBarTitle}>
+            My Marriage Partner
+          </p>
           {auth && (
             <div>
               <IconButton
@@ -150,24 +197,30 @@ export default function Home() {
                 open={open}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
+                <MenuItem onClick={handleClose}>
+                  <Link href="/sign/in">
+                    <a
+                      className={styles.card}
+                    >
+                      <p>로그 인</p>
+                    </a>
+                  </Link>
+                </MenuItem>
+                <MenuItem onClick={handleClose}>
+                  <Link href="/">
+                    <a
+                      className={styles.card}
+                    >
+                      <p>로그아웃</p>
+                    </a>
+                  </Link>
+                </MenuItem>
               </Menu>
             </div>
           )}
         </Toolbar>
       </AppBar>
     </div>
-    // <div>
-    //   {['left'].map((anchor) => (
-    //     <React.Fragment key={anchor}>
-    //       <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
-    //       <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
-    //         {list(anchor)}
-    //       </Drawer>
-    //     </React.Fragment>
-    //   ))}
-    // </div>
     
   );
 
@@ -190,7 +243,7 @@ export default function Home() {
   //       </p>
 
   //       <div className={styles.grid}>
-  //       <Link href="/samples/first-template">
+  //         <Link href="/samples/first-template">
   //           <a
   //             className={styles.card}
   //           >
